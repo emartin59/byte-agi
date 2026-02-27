@@ -6,7 +6,7 @@ A minimal, biologically-plausible, mathematically-grounded sandbox for emergent 
 
 Everything is a single byte (0–255). Vision is blind to self. Speech is visual (your body literally changes glyph). The only objective is Expected Free Energy (FEP/EFE). The code stays in pure JAX/Flax so every line compiles to GPU/TPU and scales with `vmap`/`pmap`. No Unity, no separate audio stream, no hand-crafted rewards or exploration bonuses—only physics, metabolism, curiosity, and death.  
 
-This is the cleanest possible launchpad that still lets real language, cooperation, cultural transmission, and open-ended tool use emerge.
+This is a clean launchpad that lets language, cooperation, cultural transmission, and open-ended tool use emerge.
 
 ### Phase 1: Hello World – Berry Hunter (Single Agent, Trainable)
 - 16-byte 1D tape, one `@` agent, one Berry.
