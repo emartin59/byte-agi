@@ -1,6 +1,8 @@
 # byte-agi
 Minimal KISS single-byte AGI sandbox in pure JAX. 256-state 1D universe with blind-self vision and visual speech (agents change into A-Z letters). Built on Active Inference and Expected Free Energy for emergent language, cooperation, and cultural evolution. MIT + research use encouraged.
 
+I had help from generative AI (Gemini and xAI) to come up with this text and the project concepts and code. Almost all text is AI generated.
+
 **The Byte AGI Framework**  
 A minimal, biologically-plausible, mathematically-grounded sandbox for emergent intelligence.  
 
