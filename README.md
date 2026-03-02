@@ -58,13 +58,15 @@ This is a clean launchpad that lets language, cooperation, cultural transmission
 * Every 500 steps: kill agents below energy threshold.
 * Birth new agents by copying survivor weights + small Gaussian mutation (or zero-init for pure cultural reset).
 * Lamarckian Evolutionary Mechanics: Because the agents are learning via gradient descent during their lifetime, we are simulating the Baldwin Effect. Newborns inherit the visual 26-cap language from parents via observation only—no weight transfer required for culture to spread.
+* Unsupervised Environment Design (UED) - Level 1: Randomize the map layout every episode (shifting the Button position, altering the Wire length, moving the Door and Core). This mathematically prevents agents from over-fitting to a specific trajectory (e.g., "walk exactly to tile 4"), forcing their Imagination (Transition Model) to truly understand the physics of the world, no matter the configuration.
 * Continue vmap scaling and EFE training across generations.
-* Success: the “X = open door” convention (or better ones) survives and refines across generations. You literally watch cultural evolution in the vocab logs.
+* Success: the “X = open door” convention (or better ones) survives and refines across generations and across shifting map layouts. You literally watch cultural evolution in the vocab logs as they adapt to procedural generation.
 
 ### Phase 6: The AGI Runway – Hyperscale & External Translation
 
 * Distributed training: `jax.pmap` across multi-GPU/TPU cluster (same code, instant scaling).
 * Integrate L-Mul (Linear-complexity Multiplication from BitEnergy AI): replace FP multiplies in the LSTM core with integer adds → billions of parameters at extreme efficiency.
+* Advanced UED & Open-Endedness: Expand the procedural generation to create complex, multi-step 1D puzzles (e.g., multiple doors, decoy buttons, logic gates formed by crossing wires, randomly scattered and regenerating cores). The 1D tape becomes a continuous, unpredictable, and infinite survival landscape.
 * The 1D Constraint: Keep the environment strictly 1D until everything above works perfectly. 2D pathfinding consumes 90% of a neural network's capacity in standard RL. Restricting it to 1D ensures 100% of the compute is spent on language, logic, and theory of mind. Optional 2D upgrade (16×16 grid with 7×7 local view) serves as the ultimate final test of generalization.
 * “God” LLM translator: every 10 steps feed the last 32 bytes + vocal history to an external LLM and ask it to translate the emerging 26-cap language into English. Purely for human insight.
 * Open-source license: MIT + "research use encouraged" so labs / academia can freely play.
