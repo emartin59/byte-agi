@@ -52,15 +52,18 @@ This is a clean launchpad that lets language, cooperation, cultural transmission
 
 ### Phase 5: Evolution & Cultural Transmission – Generational Turnover
 
-* **Life Cycle:** Every 500 steps, kill agents below the energy threshold.
+* **Life Cycle & Lifetime Fitness:** Every 500 steps, cull the population. Crucially, survival is judged on an agent's "Lifetime Fitness" (an exponential moving average of their hunger across dozens of episodes) rather than their performance on a single map. This eliminates the "Luck vs. Skill" problem of procedural generation, ensuring we cull agents that are genuinely unfit rather than those who just rolled a difficult map.
 * **Reproduction:** Birth new agents by copying survivor weights + small Gaussian mutation (or zero-init for pure cultural reset).
 * **Lamarckian Evolutionary Mechanics:** Because the agents learn via gradient descent during their lifetime, this simulates the Baldwin Effect. Newborns inherit the visual 26-cap language from parents via observation only—no weight transfer required for culture to spread.
 * **Unsupervised Environment Design (UED) Level 1:** Randomize the map layout every episode (shifting the Button position, altering the Wire length, moving the Door and Core). This mathematically prevents agents from over-fitting to a specific trajectory, forcing their Imagination (Transition Model) to truly understand the physics of the world regardless of configuration.
 * **Scaling:** Continue `vmap` scaling and EFE training across generations.
-* **Success Metric:** The “X = open door” convention (or better ones) survives and refines across generations and across shifting map layouts. You literally watch cultural evolution in the vocab logs as they adapt to procedural generation.
+* **Success Metric:** The “X = open door” convention (or better ones) survives and refines across generations and across shifting map layouts. You literally watch cultural evolution in the vocab logs as they adapt to procedural generation, proving the agents are passing down genuine, generalized problem-solving skills.
 
 ### Phase 6: The AGI Runway – Hyperscale & External Translation
 
 * **Distributed Training:** `jax.pmap` across multi-GPU/TPU cluster (same code, instant scaling).
 * **Efficiency:** Integrate L-Mul (Linear-complexity Multiplication from BitEnergy AI) to replace FP multiplies in the LSTM core with integer adds, enabling billions of parameters at extreme efficiency.
-* **Advanced UED & Open-Endedness:** Expand procedural generation to create complex, multi-step 1D puzzles (e.g., multiple doors, decoy buttons, logic gates formed by crossing wires, randomly scattered and regenerating cores). The 1D tape becomes a continuous, unpredictable, and infinite survival landscape.
+* **Advanced UED & Open-Endedness:** Expand procedural generation to create complex, multi-step 1D puzzles (e.g., multiple doors, decoy buttons, logic gates formed by crossing wires, randomly scattered and regenerating cores). Because the Lifetime Fitness metric from Phase 5 safely evaluates agents across varying difficulties, the 1D tape can now seamlessly become a continuous, unpredictable, and infinite survival landscape without the risk of accidentally culling your smartest agents due to bad RNG.
+* **The 1D Constraint:** Keep the environment strictly 1D until everything above works perfectly. 2D pathfinding consumes 90% of a neural network's capacity in standard RL. Restricting it to 1D ensures 100% of the compute is spent on language, logic, and theory of mind. Optional 2D upgrade (16×16 grid with 7×7 local view) serves as the ultimate final test of generalization.
+* **“God” LLM Translator:** Every 10 steps feed the last 32 bytes + vocal history to an external LLM and ask it to translate the emerging 26-cap language into English. Purely for human insight.
+* **Open-Source License:** MIT + "research use encouraged" so labs / academia can freely play.
