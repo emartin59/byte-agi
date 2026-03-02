@@ -59,4 +59,4 @@ This is a clean launchpad that lets language, cooperation, cultural transmission
 - Integrate L-Mul (Linear-complexity Multiplication from BitEnergy AI): replace FP multiplies in the LSTM core with integer adds → billions of parameters at extreme efficiency.
 - Optional 2D upgrade (after everything above works): 16×16 grid with 7×7 local view (still single-byte objects, still masked center). Spatial reasoning explodes while code stays <5 % larger.
 - “God” LLM translator: every 10 steps feed the last 32 bytes + vocal history to an external LLM and ask it to translate the emerging 26-cap language into English. Purely for human insight.
-- Open-source license: MIT + "research use encouraged" so academia can freely play.
+- Open-source license: MIT + "research use encouraged" so academia/labs can freely play.
