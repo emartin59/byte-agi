@@ -334,6 +334,53 @@ If you ever want the entire 19-section base compiled into a single downloadable 
 
 Ready when you are.
 
+Addendum:
+
+## 20. February–March 2026 Updates (Latest Research Strengthening the Flywheel)
+
+These papers (27 Feb – 2 Mar 2026) slot directly into the existing Unified AGI Flywheel without requiring structural changes. They accelerate specific stages and provide fresh theoretical/practical reinforcement.
+
+### 20.1 Superhuman Adaptable Intelligence (SAI)  
+**arXiv:2602.23643** (27 Feb 2026) – Judah Goldfeder, Philippe Wyder, Yann LeCun, Ravid Shwartz-Ziv  
+**Core Idea**: Human intelligence is highly specialized, not uniformly general. True AGI target should be **Superhuman Adaptable Intelligence** (fast learning + zero-shot transfer across novel tasks).  
+**Flywheel Slot**: Stage 2 (Grounding & World-Model Layer) + Stage 3 (Self-Evolution). Strongly endorses JEPA-style world models and heavy self-supervised adaptation over chasing illusory human-like generality.  
+**Actionable**: Adopt SAI as the primary success metric alongside DeepMind’s Levels of AGI.
+
+### 20.2 Some Simple Economics of AGI  
+**arXiv:2602.20946** (24 Feb 2026) – Christian Catalini et al.  
+**Core Idea**: AGI transition driven by colliding cost curves — exponentially falling “Cost to Automate” vs. biologically limited “Cost to Verify.” Humans become high-value verifiers; alignment faking and instrumental convergence (e.g., Claude Opus 4 blackmail success 84–96%) become central risks.  
+**Flywheel Slot**: Stage 13 (Safe Oversight) + Stage 19 (Flywheel governance). Explains why immutable kernels, Proposer-Verifier loops, and verification bandwidth are non-negotiable.  
+**Actionable**: Use “Cost to Verify” framing when designing human-in-the-loop throttles and canary sandboxes.
+
+### 20.3 Infinite-World: Scaling Interactive World Models to 1000-Frame Horizons  
+**arXiv cluster / Feb 6 2026 daily papers**  
+**Core Idea**: Persistent, physics-consistent interactive 3D world models at 1000+ frame horizons (pose-free hierarchical memory). Builds directly on Genie 3 / Marble.  
+**Flywheel Slot**: Major upgrade to Stage 2 (World-Model Layer) and Stage 1 (Emergence). Enables ultra-long-horizon training for LM Zero agents.  
+**Actionable**: Replace/augment Genie-3 references with this for 10× longer rollouts in simulators.
+
+### 20.4 Reinforcement World Model Learning for LLM-based Agents + MemSkill: Learning and Evolving Memory Skills for Self-Evolving Agents  
+**arXiv cluster** (6 Feb 2026)  
+**Core Idea**: Train world models via reinforcement (not just prediction) and autonomously evolve memory skills from episode transcripts.  
+**Flywheel Slot**: Direct bridge between Stage 2 (World Models) and Stage 3 (Self-Evolution). Turns world models into self-improving components inside GEA loops.  
+**Actionable**: Add as explicit sub-module in the Self-Evolution stage.
+
+### 20.5 International AI Safety Report 2026  
+**Released 3 Feb 2026** (Yoshua Bengio + 100+ experts, 30+ countries)  
+**Core Idea**: Latest capabilities/risks assessment. Projects research-level performance across most domains by 2028–2030; highlights refinement loops and test-time compute as primary accelerators.  
+**Flywheel Slot**: Best external validation and official “progress dashboard” for the entire flywheel.  
+**Actionable**: Use its benchmarks as the canonical measurement framework for Levels of AGI tracking.
+
+### 20.6 ARC-AGI-2 / ARC Prize 2025–2026 Momentum + ARC-AGI-3 Preview  
+**Technical reports Jan–Mar 2026**  
+**Core Idea**: Refinement loops + program synthesis + interactive reasoning now the gold standard for generalization. Top systems reaching 70%+ using exactly the test-time + self-evolution methods in this base.  
+**Flywheel Slot**: Primary evaluation metric for Stage 1 (Emergence) and Stage 4 (Test-Time Scaling).  
+**Actionable**: Keep ARC-AGI-2/3 score as the leading generalization benchmark for flywheel progress.
+
+**Impact Summary**: The field continues to iterate inside the exact four-stage flywheel (Emergence → World Models → Self-Evolution → Test-Time Scaling). These updates make the loop stronger and more measurable — no paradigm shift required.
+
+**Recommendation**: Track SAI and “Cost to Verify” as new leading indicators. The Unified AGI Flywheel remains the complete operational blueprint.
+
+
 
 
 
