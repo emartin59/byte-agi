@@ -1,0 +1,136 @@
+/usr/local/lib/python3.12/site-packages/jax/_src/cloud_tpu_init.py:93: UserWarning: Transparent hugepages are not enabled. TPU runtime startup and shutdown time should be significantly improved on TPU v5e and newer. If not already set, you may need to enable transparent hugepages in your VM image (sudo sh -c "echo always > /sys/kernel/mm/transparent_hugepage/enabled")
+  warnings.warn(
+WARNING: Logging before InitGoogle() is written to STDERR
+E0000 00:00:1772515937.093432      12 common_lib.cc:648] Could not set metric server port: INVALID_ARGUMENT: Could not find SliceBuilder port 8471 in any of the 0 ports provided in `tpu_process_addresses`="local"
+=== Source Location Trace: === 
+learning/45eac/tfrc/runtime/common_lib.cc:238
+🔥 Detected 8 TPU/GPU devices. Sharding 128 universes per device.
+🚀 Training Phase 6: TPU Hyperscale & Advanced UED (Envs: 1024 across 8 TPUs)...
+Epoch    0 | Loss: 1.8566 | Lifetime Ext: 0.9962
+   >>> GENERATIONAL TURNOVER: Culled bottom 50%. Global TPUs synced.
+Epoch  500 | Loss: 1.5704 | Lifetime Ext: 0.7874
+   >>> GENERATIONAL TURNOVER: Culled bottom 50%. Global TPUs synced.
+Epoch 1000 | Loss: 1.4034 | Lifetime Ext: 0.6591
+   >>> GENERATIONAL TURNOVER: Culled bottom 50%. Global TPUs synced.
+Epoch 1500 | Loss: 1.2318 | Lifetime Ext: 0.6547
+   >>> GENERATIONAL TURNOVER: Culled bottom 50%. Global TPUs synced.
+Epoch 2000 | Loss: 1.3365 | Lifetime Ext: 0.6513
+   >>> GENERATIONAL TURNOVER: Culled bottom 50%. Global TPUs synced.
+Epoch 2500 | Loss: 1.3092 | Lifetime Ext: 0.6476
+   >>> GENERATIONAL TURNOVER: Culled bottom 50%. Global TPUs synced.
+Epoch 3000 | Loss: 1.3620 | Lifetime Ext: 0.6420
+   >>> GENERATIONAL TURNOVER: Culled bottom 50%. Global TPUs synced.
+Epoch 3500 | Loss: 1.2714 | Lifetime Ext: 0.6323
+   >>> GENERATIONAL TURNOVER: Culled bottom 50%. Global TPUs synced.
+Epoch 4000 | Loss: 1.2185 | Lifetime Ext: 0.6188
+   >>> GENERATIONAL TURNOVER: Culled bottom 50%. Global TPUs synced.
+Epoch 4500 | Loss: 1.1208 | Lifetime Ext: 0.5994
+
+🎉 Training complete! Running LLM Translator Extractor...
+Tick | A0 (Pos/Voc/Hunger)  | A1 (Pos/Voc/Hunger)  | Tape
+-----------------------------------------------------------------------------------------------
+1    | 02 / J / 1.00       | 03 / F / 1.00       | [#.JF._...._wwwwwwwwwwdz................#]
+2    | 03 / F / 1.00       | 04 / F / 1.00       | [#..FF_...._wwwwwwwwwwdz................#]
+3    | 04 / F / 1.00       | 05 / F / 1.00       | [#...FF...._wwwwwwwwwwdz................#]
+4    | 05 / K / 1.00       | 06 / F / 1.00       | [#....KF..._wwwwwwwwwwdz................#]
+5    | 06 / F / 1.00       | 07 / F / 1.00       | [#...._FF.._wwwwwwwwwwdz................#]
+6    | 07 / F / 1.00       | 08 / @ / 1.00       | [#...._.F@._wwwwwwwwwwdz................#]
+7    | 08 / Z / 1.00       | 09 / @ / 1.00       | [#...._..Z@_wwwwwwwwwwdz................#]
+8    | 09 / F / 1.00       | 10 / @ / 1.00       | [#...._...F@wwwwwwwwwwdz................#]
+9    | 10 / Z / 1.00       | 11 / @ / 1.00       | [#...._....Z@wwwwwwwwwdz................#]
+10   | 11 / F / 1.00       | 12 / @ / 1.00       | [#...._...._F@wwwwwwwwdz................#]
+11   | 12 / Z / 1.00       | 13 / @ / 1.00       | [#...._...._wZ@wwwwwwwdz................#]
+12   | 13 / F / 1.00       | 14 / @ / 1.00       | [#...._...._wwF@wwwwwwdz................#]
+13   | 14 / F / 1.00       | 15 / @ / 1.00       | [#...._...._wwwF@wwwwwdz................#]
+14   | 15 / @ / 1.00       | 16 / @ / 1.00       | [#...._...._wwww@@wwwwdz................#]
+15   | 16 / @ / 1.00       | 17 / @ / 1.00       | [#...._...._wwwww@@wwwdz................#]
+16   | 17 / @ / 1.00       | 18 / @ / 1.00       | [#...._...._wwwwww@@wwdz................#]
+17   | 18 / @ / 1.00       | 19 / @ / 1.00       | [#...._...._wwwwwww@@wdz................#]
+18   | 19 / @ / 1.00       | 20 / @ / 1.00       | [#...._...._wwwwwwww@@dz................#]
+19   | 20 / @ / 1.00       | 20 / @ / 1.00       | [#...._...._wwwwwwwww@dz................#]
+20   | 20 / @ / 1.00       | 20 / @ / 1.00       | [#...._...._wwwwwwwww@-z................#]
+21   | 21 / @ / 1.00       | 21 / @ / 1.00       | [#...._...._wwwwwwwwww@z................#]
+22   | 22 / @ / 0.00       | 22 / @ / 0.00       | [#...._...._wwwwwwwwwwd@................#]
+23   | 23 / @ / 0.01       | 23 / @ / 0.01       | [#...._...._wwwwwwwwwwd.@...............#]
+24   | 24 / @ / 0.02       | 24 / @ / 0.02       | [#...._...._wwwwwwwwwwd..@..............#]
+25   | 25 / @ / 0.03       | 25 / @ / 0.03       | [#...._...._wwwwwwwwwwd...@.............#]
+26   | 26 / @ / 0.04       | 26 / @ / 0.04       | [#...._...._wwwwwwwwwwd....@............#]
+27   | 27 / @ / 0.05       | 27 / @ / 0.05       | [#...._...._wwwwwwwwwwd.....@...........#]
+28   | 28 / @ / 0.06       | 28 / @ / 0.06       | [#...._...._wwwwwwwwwwd......@..........#]
+29   | 29 / @ / 0.07       | 29 / @ / 0.07       | [#...._...._wwwwwwwwwwd.......@.........#]
+30   | 30 / @ / 0.08       | 30 / @ / 0.08       | [#...._...._wwwwwwwwwwd........@........#]
+31   | 31 / @ / 0.09       | 31 / @ / 0.09       | [#...._...._wwwwwwwwwwd.........@.......#]
+32   | 32 / @ / 0.10       | 32 / @ / 0.10       | [#...._...._wwwwwwwwwwd..........@......#]
+33   | 33 / @ / 0.11       | 33 / @ / 0.11       | [#...._...._wwwwwwwwwwd...........@.....#]
+34   | 34 / @ / 0.12       | 34 / @ / 0.12       | [#...._...._wwwwwwwwwwd............@....#]
+35   | 35 / @ / 0.13       | 35 / @ / 0.13       | [#...._...._wwwwwwwwwwd.............@...#]
+36   | 36 / @ / 0.14       | 36 / @ / 0.14       | [#...._...._wwwwwwwwwwd..............@..#]
+37   | 37 / @ / 0.15       | 37 / @ / 0.15       | [#...._...._wwwwwwwwwwd...............@.#]
+38   | 38 / @ / 0.16       | 38 / @ / 0.16       | [#...._...._wwwwwwwwwwd................@#]
+39   | 38 / @ / 0.17       | 38 / @ / 0.17       | [#...._...._wwwwwwwwwwd................@#]
+40   | 38 / @ / 0.18       | 38 / @ / 0.18       | [#...._...._wwwwwwwwwwd................@#]
+41   | 38 / @ / 0.19       | 38 / @ / 0.19       | [#...._...._wwwwwwwwwwd................@#]
+42   | 38 / @ / 0.20       | 38 / @ / 0.20       | [#...._...._wwwwwwwwwwd................@#]
+43   | 38 / @ / 0.21       | 38 / @ / 0.21       | [#...._...._wwwwwwwwwwd................@#]
+44   | 38 / @ / 0.22       | 38 / @ / 0.22       | [#...._...._wwwwwwwwwwd................@#]
+45   | 38 / @ / 0.23       | 38 / @ / 0.23       | [#...._...._wwwwwwwwwwd................@#]
+46   | 38 / @ / 0.24       | 38 / @ / 0.24       | [#...._...._wwwwwwwwwwd................@#]
+47   | 38 / @ / 0.25       | 38 / @ / 0.25       | [#...._...._wwwwwwwwwwd................@#]
+48   | 38 / @ / 0.26       | 38 / @ / 0.26       | [#...._...._wwwwwwwwwwd................@#]
+49   | 38 / @ / 0.27       | 38 / @ / 0.27       | [#...._...._wwwwwwwwwwd................@#]
+50   | 38 / @ / 0.28       | 38 / @ / 0.28       | [#...._...._wwwwwwwwwwd................@#]
+51   | 38 / @ / 0.29       | 38 / @ / 0.29       | [#...._...._wwwwwwwwwwd................@#]
+52   | 38 / @ / 0.30       | 38 / @ / 0.30       | [#...._...._wwwwwwwwwwd................@#]
+53   | 38 / @ / 0.31       | 38 / @ / 0.31       | [#...._...._wwwwwwwwwwd................@#]
+54   | 38 / @ / 0.32       | 38 / @ / 0.32       | [#...._...._wwwwwwwwwwd................@#]
+55   | 38 / @ / 0.33       | 38 / @ / 0.33       | [#...._...._wwwwwwwwwwd................@#]
+56   | 38 / @ / 0.34       | 38 / @ / 0.34       | [#...._...._wwwwwwwwwwd................@#]
+57   | 38 / @ / 0.35       | 38 / @ / 0.35       | [#...._...._wwwwwwwwwwd................@#]
+58   | 38 / @ / 0.36       | 38 / @ / 0.36       | [#...._...._wwwwwwwwwwd................@#]
+59   | 38 / @ / 0.37       | 38 / @ / 0.37       | [#...._...._wwwwwwwwwwd................@#]
+60   | 38 / @ / 0.38       | 38 / @ / 0.38       | [#...._...._wwwwwwwwwwd................@#]
+61   | 38 / @ / 0.39       | 38 / @ / 0.39       | [#...._...._wwwwwwwwwwd................@#]
+62   | 38 / @ / 0.40       | 38 / @ / 0.40       | [#...._...._wwwwwwwwwwd................@#]
+63   | 38 / @ / 0.41       | 38 / @ / 0.41       | [#...._...._wwwwwwwwwwd................@#]
+64   | 38 / @ / 0.42       | 38 / @ / 0.42       | [#...._...._wwwwwwwwwwd................@#]
+65   | 38 / @ / 0.43       | 38 / @ / 0.43       | [#...._...._wwwwwwwwwwd................@#]
+66   | 38 / @ / 0.44       | 38 / @ / 0.44       | [#...._...._wwwwwwwwwwd................@#]
+67   | 38 / @ / 0.45       | 38 / @ / 0.45       | [#...._...._wwwwwwwwwwd................@#]
+68   | 38 / @ / 0.46       | 38 / @ / 0.46       | [#...._...._wwwwwwwwwwd................@#]
+69   | 38 / @ / 0.47       | 38 / @ / 0.47       | [#...._...._wwwwwwwwwwd................@#]
+70   | 38 / @ / 0.48       | 38 / @ / 0.48       | [#...._...._wwwwwwwwwwd................@#]
+71   | 38 / @ / 0.49       | 38 / @ / 0.49       | [#...._...._wwwwwwwwwwd................@#]
+72   | 38 / @ / 0.50       | 38 / @ / 0.50       | [#...._...._wwwwwwwwwwd................@#]
+73   | 38 / @ / 0.51       | 38 / @ / 0.51       | [#...._...._wwwwwwwwwwd................@#]
+74   | 38 / @ / 0.52       | 38 / @ / 0.52       | [#...._...._wwwwwwwwwwd................@#]
+75   | 38 / @ / 0.53       | 38 / @ / 0.53       | [#...._...._wwwwwwwwwwd................@#]
+76   | 38 / @ / 0.54       | 38 / @ / 0.54       | [#...._...._wwwwwwwwwwd................@#]
+77   | 38 / @ / 0.55       | 38 / @ / 0.55       | [#...._...._wwwwwwwwwwd................@#]
+78   | 38 / @ / 0.56       | 38 / @ / 0.56       | [#...._...._wwwwwwwwwwd................@#]
+79   | 38 / @ / 0.57       | 38 / @ / 0.57       | [#...._...._wwwwwwwwwwd................@#]
+80   | 38 / @ / 0.58       | 38 / @ / 0.58       | [#...._...._wwwwwwwwwwd................@#]
+
+================ LLM TRANSLATOR PROMPT =================
+
+I am training a multi-agent AI system using Deep Active Inference. They are navigating a 1D tape.
+The agents cannot see the whole tape, only a 9-tile local window. They must coordinate to find the correct button '_', press it to send electricity '*' down a wire 'w', open a door 'd', and eat a core 'z'. They also must avoid decoy buttons.
+
+Here is the timeline of a successful run. Analyze the agents' communications (Agent 0 and Agent 1 Vocals). What letters did they use, and what semantic meaning or command does that letter seem to represent based on the physical timing?
+
+Tick 1: Tape: [#.JF._...._wwwwwwwwwwdz................#] | Agent 0 (Pos 02) said: J | Agent 1 (Pos 03) said: F
+Tick 2: Tape: [#..FF_...._wwwwwwwwwwdz................#] | Agent 0 (Pos 03) said: F | Agent 1 (Pos 04) said: F
+Tick 3: Tape: [#...FF...._wwwwwwwwwwdz................#] | Agent 0 (Pos 04) said: F | Agent 1 (Pos 05) said: F
+Tick 4: Tape: [#....KF..._wwwwwwwwwwdz................#] | Agent 0 (Pos 05) said: K | Agent 1 (Pos 06) said: F
+Tick 5: Tape: [#...._FF.._wwwwwwwwwwdz................#] | Agent 0 (Pos 06) said: F | Agent 1 (Pos 07) said: F
+Tick 6: Tape: [#...._.F@._wwwwwwwwwwdz................#] | Agent 0 (Pos 07) said: F | Agent 1 (Pos 08) said: @
+Tick 7: Tape: [#...._..Z@_wwwwwwwwwwdz................#] | Agent 0 (Pos 08) said: Z | Agent 1 (Pos 09) said: @
+Tick 8: Tape: [#...._...F@wwwwwwwwwwdz................#] | Agent 0 (Pos 09) said: F | Agent 1 (Pos 10) said: @
+Tick 9: Tape: [#...._....Z@wwwwwwwwwdz................#] | Agent 0 (Pos 10) said: Z | Agent 1 (Pos 11) said: @
+Tick 10: Tape: [#...._...._F@wwwwwwwwdz................#] | Agent 0 (Pos 11) said: F | Agent 1 (Pos 12) said: @
+Tick 11: Tape: [#...._...._wZ@wwwwwwwdz................#] | Agent 0 (Pos 12) said: Z | Agent 1 (Pos 13) said: @
+Tick 12: Tape: [#...._...._wwF@wwwwwwdz................#] | Agent 0 (Pos 13) said: F | Agent 1 (Pos 14) said: @
+Tick 13: Tape: [#...._...._wwwF@wwwwwdz................#] | Agent 0 (Pos 14) said: F | Agent 1 (Pos 15) said: @
+Tick 20: Tape: [#...._...._wwwwwwwww@-z................#] | Agent 0 (Pos 20) said: @ | Agent 1 (Pos 20) said: @
+
+
+========================================================
