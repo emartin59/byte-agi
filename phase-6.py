@@ -1,3 +1,6 @@
+
+# *** Be sure to enable the TPU v5e-8 as the Accelorator on the right side menu in Kaggle, not the P100 GPU, for this phase. ***
+
 import jax
 import jax.numpy as jnp
 import jax.random as random
