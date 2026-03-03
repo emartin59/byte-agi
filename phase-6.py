@@ -247,9 +247,10 @@ def evolve_global_population(params, opt_state, ema_fitness, key):
     top_idx = sort_idx[:NUM_ENVS // 2]
     
     def apply_evolution(x):
-        # Ignore scalar step counters
-        if x.ndim == 1 and x.shape[0] == num_devices: return x
-        
+        # Ignore scalar step counters - return them exactly as they are
+        if x.ndim == 1 and x.shape[0] == num_devices: 
+            return x
+            
         flat_x = x.reshape((NUM_ENVS,) + x.shape[2:])
         top_half = flat_x[top_idx]
         cloned = jnp.concatenate([top_half, top_half], axis=0)
@@ -258,10 +259,8 @@ def evolve_global_population(params, opt_state, ema_fitness, key):
     new_params = jax.tree_util.tree_map(apply_evolution, params)
     new_opt_state = jax.tree_util.tree_map(apply_evolution, opt_state)
     
+    # Only apply noise to the actual neural network parameters, NOT the opt_state!
     def apply_noise(p, k):
-        # Ignore scalar step counters
-        if p.ndim == 1 and p.shape[0] == num_devices: return p
-        
         noise = jax.random.normal(k, p.shape) * 0.05
         mask = jnp.concatenate([jnp.zeros(NUM_ENVS // 2), jnp.ones(NUM_ENVS // 2)])
         mask = mask.reshape((num_devices, envs_per_device) + (1,) * (p.ndim - 2))
@@ -272,7 +271,6 @@ def evolve_global_population(params, opt_state, ema_fitness, key):
     noisy_leaves = [apply_noise(leaf, k) for leaf, k in zip(leaves, keys)]
     final_params = jax.tree_util.tree_unflatten(treedef, noisy_leaves)
     
-    # FIX: Return BOTH the mutated params and the new opt state!
     return final_params, new_opt_state
 
 # ====================== THE "GOD" LLM TRANSLATOR ======================
