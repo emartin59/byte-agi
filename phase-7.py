@@ -1,3 +1,6 @@
+
+# *** Runs but doesn't achieve intended result. ***
+
 import jax
 import jax.numpy as jnp
 import jax.random as random
