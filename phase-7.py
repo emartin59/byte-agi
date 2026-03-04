@@ -1,5 +1,6 @@
 
-# *** Runs but doesn't achieve intended result. ***
+# *** Program runs but doesn't achieve intended result. ***
+# *** Be sure to enable the TPU v5e-8 as the Accelorator on the right side menu in Kaggle for this phase. ***
 
 import jax
 import jax.numpy as jnp
