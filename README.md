@@ -6,6 +6,8 @@ byte-agi is a minimal, biologically-plausible, mathematically-grounded sandbox f
 
 Everything is a single byte (0–255). Vision is blind to self. Speech is visual (your body literally changes glyph). The only objective is Expected Free Energy (FEP/EFE). The code stays in pure JAX/Flax so every line compiles to GPU/TPU and scales with `vmap`/`pmap`. No Unity, no separate audio stream, no hand-crafted rewards or exploration bonuses—only physics, metabolism, curiosity, and death.
 
+The roadmap is deliberately staged: **never change the learning algorithm and the environment at the same time**. Each phase has clear success metrics, required libraries, and expected emergent behaviors.
+
 This is a clean launchpad that lets language, cooperation, cultural transmission, and open-ended tool use emerge.
 
 ### Phase 1: Hello World – Berry Hunter (Single Agent, Trainable)
@@ -67,3 +69,100 @@ This is a clean launchpad that lets language, cooperation, cultural transmission
 * **The 1D Constraint:** Keep the environment strictly 1D until everything above works perfectly. 2D pathfinding consumes 90% of a neural network's capacity in standard RL. Restricting it to 1D ensures 100% of the compute is spent on language, logic, and theory of mind. Optional 2D upgrade (16×16 grid with 7×7 local view) serves as the ultimate final test of generalization.
 * **“God” LLM Translator:** Every 10 steps feed the last 32 bytes + vocal history to an external LLM and ask it to translate the emerging 26-cap language into English. Purely for human insight.
 * **Open-Source License:** MIT + "research use encouraged" so independents / labs / academia can freely play.
+
+## AGI Roadmap (2026–2029)
+
+### Phase 7: Actor-Critic Foundations – Strict 1D Expansion
+**Timeline:** March–April 2026 (3–5 weeks)  
+**Compute:** Single Kaggle TPU v5e-8 (exactly as Phase 6)  
+**Goal:** Fix credit assignment so agents can plan over 200–300 steps. Prove GAE + Value Head works before touching 2D.
+
+**Key upgrades**
+- Brain: Actor-Critic with Policy head, Vocal head, and new Value head (critic predicts remaining hunger/surprise).
+- Learning: Full Generalized Advantage Estimation (GAE λ=0.95, γ=0.99) + value loss.
+- Early termination: Episode ends the exact tick any agent eats a core. Terminal bonus = 1.0 – mean final hunger (forces speed and coordination).
+- World: 1D tape expanded to **256 tiles**, **6 agents** per universe (stacking allowed — agents can occupy same tile to prevent traffic jams).
+- Extreme UED: 0–3 decoy buttons, wire lengths 20–200 tiles, randomized real-button logic, occasional double-core vaults.
+- Brain addition: Cheap sliding-window attention over last 32 steps on top of LSTM (HIDDEN_DIM=128).
+- Diagnostics added: success rate %, average episode length, role entropy, vocal mutual-information tables, bigram heatmaps, broadcasting frequency.
+
+**Success criteria**
+- Success rate >85 % on 300-step tasks.
+- Average episode length drops from ~250 → <80 ticks.
+- Emergent language expands (roles: scouts, pressers, confirmers; broadcasting signals; “names” for agents).
+- Stable training (no gradient explosion).
+
+### Phase 8: First 2D World & Memory Upgrade
+**Timeline:** May–August 2026 (3–4 months)  
+**Compute:** Same TPU v5e-8 (still fits 1024 envs).
+
+**Key upgrades**
+- World: 32×32 → 64×64 grid using **CAX** library (ICLR 2025 oral — 10–100× faster 2D CA on TPU).
+- Physics: Wireworld-style cellular automata (conductors, sources, transistors/gates, structural blocks).
+- Agents: 8–16 per universe, 9×9 local vision, 5-tile vocal radius.
+- Actions: Mine + Place (limited to conductors and basic gates). Core vaults still provide reliable reward.
+- Brain: Replace LSTM with small Mamba or sliding-window Transformer memory (CAX examples available).
+- Fitness: Total energy harvested by the tribe + bonus for machine complexity (gate count).
+- Cultural transmission: Top 25 % agents’ memory embeddings seeded into newborns.
+
+**Success criteria**
+- Agents build simple circuits to reach cores.
+- Clear division of labor (scouts vs builders vs signal-relay specialists).
+- Reusable “blueprints” communicated via glyphs across the map.
+- Success rate >80 % on 500-step tasks.
+
+**Dependencies:** `pip install cax` (already TPU-optimized).
+
+### Phase 9: Turing Sandbox – Open-Ended 2D
+**Timeline:** September 2026–March 2027 (6–7 months)  
+**Compute:** TPU v5e-8 or small pod slice.
+
+**Key upgrades**
+- World: Full **256×256** CAX grid with procedural biomes and scattered resource vaults (no pre-built solutions).
+- Agents: 16–32 per universe.
+- Physics: Fully Turing-complete blocks (transistors, logic gates, etc.).
+- LLM-in-the-loop: Your “God” translator runs on top 10 % every 250 generations → extracts dictionary → injects as auxiliary loss or embedding prior.
+- Fitness: Purely lifetime tribe energy harvested + complexity of persistent machines left on the map.
+- Open-endedness: Episodes run until starvation or 2,000 steps; new vaults spawn dynamically when mastery is detected.
+
+**Success criteria**
+- Emergent hierarchy, named agents, physical signal towers, and cultural traditions that survive generational turnover.
+- Agents invent and reuse complex machines across generations.
+- Vocabulary evolves into proto-grammar (conditional signals, planning statements).
+
+### Phase 10: Embodiment in High-Fidelity Simulation
+**Timeline:** April–December 2027 (8–9 months)  
+**Compute:** TPU pod + GPU cluster for sim rendering.
+
+**Key upgrades**
+- Interface: Byte-grid vision (9×9 or 11×11) to JAX-native robotics simulators (MuJoCo, Brax, or Isaac Gym via JAX).
+- New modality: Audio (spoken commands become byte streams on the grid).
+- Tool-use: Special glyphs let agents call external JAX functions (math, search, code execution).
+- Training stays fully in simulation (no physical hardware yet).
+
+**Success criteria**
+- Zero-shot sim-to-sim transfer across different robot morphologies.
+- Agents use tools and language to solve embodied tasks (navigation, manipulation, collaborative construction).
+
+### Phase 11–12: Recursive Self-Improvement & Multi-Agent Societies
+**Timeline:** 2028 (12–18 months total)  
+**Compute:** Full TPU pod / Pathways cluster.
+
+**Key upgrades**
+- Meta-evolution: Agents propose and test small architecture mutations (NAS on Mamba/Transformer core).
+- Scale: 1,000–10,000+ agents across multiple universes with specialization and “trade”.
+- Environments: Indefinite runtime; new puzzles and biomes spawn automatically on mastery.
+- Full cultural evolution metrics (dictionary stability, tradition inheritance).
+
+**Success criteria**
+- Agents improve their own training loop or memory architecture.
+- Stable multi-agent societies with division of labor, markets, and long-term planning.
+
+### Phase 13+: True AGI Deployment
+**Timeline:** 2029 onward
+
+**Key features**
+- Persistent multi-agent societies running 24/7 in simulation and real Spatial Web environments.
+- Grounded safety: Every action must reduce global free energy (active-inference prior).
+- LLM oracle access: Frontier models queried only through byte-level grounded channels.
+- Global audit log: Your LLM translator becomes the permanent interpretability layer.
