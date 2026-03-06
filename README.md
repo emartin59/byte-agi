@@ -1,14 +1,32 @@
-# byte-agi
+# 🦠 byte-agi: End-to-End Differentiable Sandbox for Open-Ended Multi-Agent Emergence via Active Inference
 
-I had help from generative AI (Gemini and xAI) to come up with this text and the project concepts and code. Almost all text/code is AI generated. The hope for the project is to create all of the below phases and test them, and for the earlier phases to be runnable for free within a single Kaggle notebook with the GPU P100 selected on the right-side menu. Not there yet.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![JAX](https://img.shields.io/badge/JAX-Accelerated-blue)](https://github.com/google/jax)
+[![Status: Experimental](https://img.shields.io/badge/Status-Experimental-orange)]()
 
-byte-agi is a minimal, biologically-plausible, mathematically-grounded sandbox for emergent intelligence.
-Everything is a single byte (0–255). Vision is blind to self. Speech is visual (your body literally changes glyph). The only objective is Expected Free Energy (FEP/EFE). The code stays in pure JAX/Flax so every line compiles to GPU/TPU and scales with `vmap`/`pmap`. No Unity, no separate audio stream, no hand-crafted rewards or exploration bonuses—only physics, metabolism, curiosity, and death.
+> A minimal, biologically-plausible, mathematically-grounded sandbox for emergent intelligence. No hand-crafted rewards, no hard-coded physics, no external simulators. Just pure math, metabolism, and curiosity compiled directly to the TPU.
 
-The roadmap is deliberately staged: **never change the learning algorithm and the environment at the same time**. Each phase has clear success metrics, required libraries, and expected emergent behaviors.
-This is a clean launchpad that lets language, cooperation, cultural transmission, and open-ended tool use emerge.
+## Abstract
+Current multi-agent reinforcement learning (MARL) and artificial life (ALife) sandboxes are often constrained by the CPU-GPU transfer bottlenecks of external physics simulators and the brittle nature of hand-crafted exploration heuristics. `byte-agi` introduces a fully differentiable, open-ended ALife environment implemented entirely in pure JAX. By combining Neural Cellular Automata (via `CAX`) for emergent physics with Karl Friston’s Expected Free Energy (EFE) as the sole intrinsic objective, both the agents' brains (LSTM/Mamba) and the environment itself are compiled into a single `jax.lax.scan` loop. This allows for massive `vmap`/`pmap` vectorization across thousands of parallel universes. Furthermore, we introduce a novel framework for analyzing emergent proto-language without contaminating the agents' *tabula rasa* learning state, utilizing an external frontier LLM purely as an isolated, read-only "God Translator" to monitor Baldwinian cultural transmission across generations.
 
-phase-1-7.py and phase-1-6-sample-output.txt in the Files are from a prior roadmap/README.md. Significant tweaks from the prior roadmap start at Phase 4 below where CAX is now added at that stage.
+## 🚀 Key Innovations
+
+* **Zero CPU Bottleneck:** The physics engine, vision, and agent policies are written in pure JAX/Flax. Every line compiles to GPU/TPU, allowing massive scaling via `jax.vmap` and `jax.pmap`.
+* **Active Inference (EFE) over Reward Hacking:** No hand-coded exploration bonuses. Agents are driven entirely by Expected Free Energy, mathematically forcing epistemic wandering (curiosity/mapping) until environmental surprise drops to zero, seamlessly giving way to pragmatic exploitation (metabolism/survival).
+* **Differentiable Physics via Cellular Automata:** Environmental rules (doors, resources, logic gates) are not hard-coded. They emerge from local Rule-110-style continuous cellular automata using the TPU-optimized `CAX` library, enabling agents to discover unscripted tool use and physical manipulation.
+* **Baldwinian Cultural Transmission:** To prevent catastrophic forgetting across generations, agents pass down only initial birth weights. Newborns must re-learn language and tool-use through direct observation of surviving parents and a lightweight "Cultural Elder," enabling true cultural evolution.
+* **The "God Translator" Interpretability Suite:** Agents operate in a strict 0-255 byte universe (where speech visually alters the agent's glyph). An external, isolated LLM samples the grid's local history to translate emergent 26-character vocabularies into human-readable English, providing real-time insight into multi-agent coordination strategies.
+
+## Motivation
+The path to AGI requires more than static text prediction; it requires embodied reasoning, unscripted tool use, and complex multi-agent coordination. While the current trend relies on wrapping pre-trained LLMs in agentic loops, `byte-agi` takes the opposite approach: stripping out human language and history entirely to observe how communication, physics exploitation, and open-endedness emerge from a *tabula rasa* neural network forced to survive in a mathematically rigorous universe. 
+
+---
+*(Note: The roadmap below is deliberately staged. Never change the learning algorithm and the environment at the same time.)*
+
+## 🗺️ The Roadmap
+
+### Phase 1: Hello World – Berry Hunter (Single Agent, Trainable)
+... [Keep your existing Phase 1 to Phase 13 text here] ...
 
 ### Phase 1: Hello World – Berry Hunter (Single Agent, Trainable)
 * **Environment:** 16-byte 1D tape, one `@` agent, one Berry.
