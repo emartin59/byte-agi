@@ -4,6 +4,7 @@ Byte-AGI: AGI Roadmap Discussion
 https://gemini.google.com/share/d6adf202aab9
 Created with Pro March 10, 2026 at 04:05 PM
 Published March 14, 2026 at 04:19 PM
+
 You said
 Do you think there is anything, any little nuggets, or big nuggets, that could be useful to any AI labs or researchers to help them get to AGI faster?: # 🦠 byte-agi: End-to-End Differentiable Sandbox for Open-Ended Multi-Agent Emergence via Active Inference
 
@@ -11024,7 +11025,7 @@ Just restart the cell with your auto_alife.py code. The script will automaticall
 (Note: If you are having trouble with the Kaggle Secrets menu, you can technically just paste the key directly into the script on line 31 by changing API_KEY = "YOUR_GEMINI_API_KEY" to API_KEY = "AIzaSy...", but please be careful never to share the notebook if you do that!)
 
 
-Here's the full code of the 100 iteration run (beyond this run things seemed to get a bit unstable, perhaps Gemini 2.5 flash couldn't easily hand more than 12 JAX expert rules):
+Here's the full code that ran the 100 iterations (or close to that original code):
 
 import os
 import re
