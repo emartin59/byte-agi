@@ -26,9 +26,6 @@ The path to AGI requires more than static text prediction; it requires embodied 
 ## 🗺️ The Roadmap
 
 ### Phase 1: Hello World – Berry Hunter (Single Agent, Trainable)
-... [Keep your existing Phase 1 to Phase 13 text here] ...
-
-### Phase 1: Hello World – Berry Hunter (Single Agent, Trainable)
 * **Environment:** 16-byte 1D tape, one `@` agent, one Berry.
 * **Vision:** Blind-self vision using a 9-tile window (4 left + 4 right), with the center masked to EMPTY.
 * **Proprioception:** Concatenates current hunger + last action + last vocal (even if Phase 1 vocal=0).
